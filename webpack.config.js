@@ -7,7 +7,7 @@ module.exports = {
 
 	//specify to create bundle.js file at path /dist/bundle.js
 	output: {
-		path: path.join(__dirname, "dist"),
+		path: path.join(__dirname, "build"),
 		filename: "bundle.js",
 	},
 
@@ -22,8 +22,8 @@ module.exports = {
 	module: {
 		rules: [
 			{
-				//transpile files ending with .js
-				test: /.js$/,
+				// transpile files ending with .js
+				test: /\.(js|jsx)$/i,
 
 				// node_modules from transpilation
 				exclude: /node_modules/,
@@ -35,6 +35,24 @@ module.exports = {
 						presets: ["@babel/preset-env", "@babel/preset-react"],
 					},
 				},
+			},
+			{
+				test: /\.css$/i,
+				use: ["style-loader", "css-loader"],
+			},
+			{
+				// transpile image files
+				test: /\.(png|svg|jpg|jpeg|gif)$/i,
+
+				// resource asset module in webpack 5+ to replace image-loader etc
+				type: "asset/resource",
+			},
+			{
+				// transpile font files
+				test: /\.(woff|woff2|eot|ttf|otf)$/i,
+
+				// resource asset module in webpack 5+
+				type: "asset/resource",
 			},
 		],
 	},

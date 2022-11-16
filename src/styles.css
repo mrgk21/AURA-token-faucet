@@ -1,0 +1,105 @@
+@font-face {
+    font-family: 'Header-font';
+    src: url('../resources/fonts/liberation-serif/LiberationSerif-Italic.ttf');
+}
+
+@font-face {
+    font-family: 'Text-font';
+    src: url('../resources/fonts/futura/Futura\ Light\ Italic\ font.ttf');
+}
+
+:root {
+    --fontSize_heading_big: 2.5rem;
+    --fontSize_text_big: 1rem;
+    --fontSize_heading_small: 1.5rem; 
+    --fontSize_text_small: 0.7rem;
+}
+
+body {
+    background-color: greenyellow;
+}
+
+a {
+    color: black;
+}
+
+.container {
+    display: flex;
+    box-sizing: border-box;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 0.5rem;
+    
+    /* border: 1px solid black; */
+    border-radius: 5px;
+    padding: 0.5rem;
+}
+
+.heading {
+    font-family: 'Header-font';
+    font-size: var(--fontSize_heading_big);
+}
+
+.logo {
+    height: auto;
+    background-color: transparent;
+}
+
+.key-form {
+    display: flex;
+    flex-flow: row;
+    column-gap: 0.5rem;
+    flex: 1 1 auto;
+
+    font-family: 'Text-font';
+    font-size: var(--fontSize_text_big);
+    
+}
+
+.key-form > * {
+    padding: 0.5rem;
+    border: none;
+    border-radius: 2px;
+    font: inherit
+}
+
+.key-form > input {
+    font: inherit;
+    flex-grow: 1;
+}
+
+.key-form > button:hover {
+    cursor: pointer;
+}
+
+span {
+    font-family: 'Text-font';
+    font-size: var(--fontSize_text_big);
+}
+
+@media (min-width: 450px) {
+    .container > * {
+        width: 33vw;
+    }
+}
+
+@media (max-width: 450px) {
+    .container {
+        align-items: unset;
+    }
+    .key-form {
+        column-gap: 0.2rem;
+    }
+    .container > * {
+        width: unset;
+    }
+    .heading {
+        font-size: var(--fontSize_heading_small);
+    }
+    .key-form {
+        font-size: var(--fontSize_text_small);
+    }
+    span {
+        font-size: var(--fontSize_text_small);
+    }
+}
