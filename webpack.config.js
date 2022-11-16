@@ -7,7 +7,7 @@ module.exports = {
 
 	//specify to create bundle.js file at path /dist/bundle.js
 	output: {
-		path: path.join(__dirname, "/dist"),
+		path: path.join(__dirname, "dist"),
 		filename: "bundle.js",
 	},
 
