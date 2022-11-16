@@ -1,5 +1,6 @@
 {
   "name": "react-without-cra",
+  "homepage":"https://mrgk21.github.io",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -8,8 +9,7 @@
     "deploy": "gh-pages -d build",
     "start": "webpack-dev-server --mode development --open --hot",
     "build": "webpack --mode production",
-    "serve": "webpack serve --mode development"
-    
+    "serve": "webpack serve --mode development" 
   },
   "keywords": [],
   "author": "",
