@@ -23,6 +23,11 @@ a {
     color: black;
 }
 
+.toast {
+    font-family: 'Text-font';
+    font-size: var(--fontSize_text_big);
+}
+
 .container {
     display: flex;
     box-sizing: border-box;
@@ -53,7 +58,6 @@ a {
 
     font-family: 'Text-font';
     font-size: var(--fontSize_text_big);
-    
 }
 
 .key-form > * {
@@ -68,7 +72,15 @@ a {
     flex-grow: 1;
 }
 
-.key-form > button:hover {
+button {
+    padding: 0.5rem;
+    border: none;
+    border-radius: 2px;
+    font-family: 'Text-font';
+    font-size: var(--fontSize_text_big)
+}
+
+button:hover {
     cursor: pointer;
 }
 
