@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Web3 from "web3";
-import banana from "../../resources/logo.svg";
+// import banana from "../../resources/logo3.jpg";
 import toast, { Toaster } from "react-hot-toast";
 
 let web3;
@@ -8,7 +8,7 @@ const tokensPerRequest = 1000;
 const gasLimit = 60000;
 const baseFee = 1.8;
 const priorityFee = baseFee;
-const tokenAddress = "0x4545761717e1aeb030c99e178968e08a4ce27b10";
+const tokenAddress = "0x37e97312DFbF16dEB489875751a2B982aA17b2cF";
 const adminAddress = "0x54fCe65792cbC7ad71c7220D6461D023A4d413a6";
 
 const App = () => {
@@ -76,10 +76,12 @@ const App = () => {
 		const { refillAmount } = options;
 
 		const obj = {
+			from: accounts[0],
 			to: tokenAddress,
 			data: dataStringBuilder("refillFaucet(uint256)", 1, refillAmount),
-			gas: Number(gas).toString(16),
-
+			gasLimit: Number(gasLimit).toString(16),
+			maxFeePerGas: Number(web3.utils.toWei(String(baseFee), "gwei")).toString(16),
+			maxPriorityFeePerGas: Number(web3.utils.toWei(String(priorityFee), "gwei")).toString(16),
 			chainId: "0xaa36a7",
 		};
 
@@ -100,7 +102,7 @@ const App = () => {
 		const { target } = e;
 		const userIP = await (await fetch("https://geolocation-db.com/json/")).json();
 		const localUserIP = localStorage.getItem(userIP.IPv4);
-		console.log(localUserIP);
+
 		let remainingTime;
 		if (!localUserIP) remainingTime = 0;
 		else remainingTime = localUserIP - Date.now();
@@ -140,8 +142,8 @@ const App = () => {
 	return (
 		<React.Fragment>
 			<div className="container">
-				<div className="heading">fancyBanana (FBNNA) faucet</div>
-				<img className="logo" src={banana} alt="logo img" />
+				<div className="heading">Aurora Token (AURA) faucet</div>
+				{/* <img className="logo" src={banana} alt="logo img" /> */}
 				{txHash && (
 					<span>
 						Go to transaction:{" "}
@@ -181,7 +183,7 @@ const App = () => {
 					</a>
 				</span>
 				<span>
-					Dont have enough balance? Try{" "}
+					Dont have enough SepoliaETH? Try{" "}
 					<a href="https://faucet.sepolia.dev/" target="_blank">
 						Here
 					</a>

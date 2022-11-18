@@ -16,11 +16,14 @@
 }
 
 body {
-    background-color: greenyellow;
+    /* background-color: rgba(1,11,36,255); */
+    background-image: url('../resources/logo3.jpg');
+    background-repeat: no-repeat;
+    /* background-size: auto; */
 }
 
 a {
-    color: black;
+    color: white
 }
 
 .toast {
@@ -42,6 +45,7 @@ a {
 
 .heading {
     font-family: 'Header-font';
+    color: white;
     font-size: var(--fontSize_heading_big);
 }
 
@@ -57,6 +61,7 @@ a {
     flex: 1 1 auto;
 
     font-family: 'Text-font';
+    color: white;
     font-size: var(--fontSize_text_big);
 }
 
@@ -77,7 +82,7 @@ button {
     border: none;
     border-radius: 2px;
     font-family: 'Text-font';
-    font-size: var(--fontSize_text_big)
+    font-size: var(--fontSize_text_big)  
 }
 
 button:hover {
@@ -86,18 +91,31 @@ button:hover {
 
 span {
     font-family: 'Text-font';
+    color: white;
     font-size: var(--fontSize_text_big);
 }
 
 @media (min-width: 450px) {
+    body {
+        background-image: url('../resources/logo3.jpg');
+        background-attachment: fixed;
+        background-size: 100vw 100vh;
+    }
     .container > * {
         width: 33vw;
     }
 }
 
 @media (max-width: 450px) {
+    body {
+        background-position: 50% top;
+        background-size: auto 100vh;
+    }
     .container {
         align-items: unset;
+        position: relative;
+        top: 10vh;
+        row-gap: 0.75rem;
     }
     .key-form {
         column-gap: 0.2rem;
