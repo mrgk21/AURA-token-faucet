@@ -188,6 +188,10 @@ const App = () => {
 						Here
 					</a>
 				</span>
+				<span className="disclaimer">
+					Unfortunately sepolia testnet does not support metamask mobile. Check{" "}
+					<a href="https://github.com/MetaMask/metamask-mobile/issues/5259">here</a> for updates.
+				</span>
 				<Toaster position="top-left" toastOptions={{ className: "toast" }} />
 			</div>
 		</React.Fragment>

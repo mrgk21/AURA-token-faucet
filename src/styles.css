@@ -26,6 +26,10 @@ a {
     color: white
 }
 
+.disclaimer {
+    color: yellow;
+}
+
 .toast {
     font-family: 'Text-font';
     font-size: var(--fontSize_text_big);
